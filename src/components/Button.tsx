@@ -3,11 +3,12 @@ import React, { ReactNode } from "react";
 interface Props {
   id: string;
   title: string;
-  leftIcon: ReactNode;
+  leftIcon?: ReactNode;
+  rightIcon?: ReactNode;
   containerClass: string;
 }
 
-const Button = ({ id, title, leftIcon, containerClass }: Props) => {
+const Button = ({ id, title, leftIcon, rightIcon, containerClass }: Props) => {
   return (
     <button
       id={id}
@@ -17,6 +18,8 @@ const Button = ({ id, title, leftIcon, containerClass }: Props) => {
       <span className="relative inline-flex overflow-hidden font-general text-xs uppercase">
         <div>{title}</div>
       </span>
+
+      {rightIcon}
     </button>
   );
 };
